@@ -1,5 +1,5 @@
-// Дата анонса 2 сезона (7 января 2024)
-const announceDate = new Date('2024-01-07T00:00:00');
+// Дата анонса 2 сезона (19 марта 2022)
+const announceDate = new Date('2022-03-19T00:00:00');
 
 function updateTimer() {
     const now = new Date();
