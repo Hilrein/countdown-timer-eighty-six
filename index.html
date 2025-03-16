@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>Genshin Impact OST</title>
+</head>
+<body>
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="bg1.mp4" type="video/mp4">
+    </video>
+    <audio id="bg-music" autoplay loop>
+        <source src="audio/audio.mp4" type="audio/mp4">
+    </audio>
+    <button id="music-toggle" class="music-btn playing">
+        <span class="music-icon">♪</span>
+    </button>
+    <div class="logo-container">
+        <div class="logo-content">
+            <img src="logo86.png" alt="Logo 86" class="logo">
+            <div class="announcement-text">It's been since the announcement of Season 2</div>
+        </div>
+    </div>
+    <div class="timer-container">
+        <div class="timer">
+            <div class="timer-item">
+                <span id="days">0</span>
+                <span class="label">дней</span>
+            </div>
+            <div class="timer-item">
+                <span id="hours">00</span>
+                <span class="label">часов</span>
+            </div>
+            <div class="timer-item">
+                <span id="minutes">00</span>
+                <span class="label">минут</span>
+            </div>
+            <div class="timer-item">
+                <span id="seconds">00</span>
+                <span class="label">секунд</span>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

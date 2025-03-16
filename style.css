@@ -1,0 +1,267 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.logo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    border-radius: 6px;
+}
+
+.announcement-text {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-align: center;
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.timer-container {
+    position: fixed;
+    bottom: 39%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    z-index: 1;
+}
+
+.timer {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 15px;
+    position: relative;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 5px;
+}
+
+.timer-item:not(:last-child)::after {
+    content: ':';
+    position: absolute;
+    right: -10px;
+    top: 45%;
+    transform: translateY(-50%);
+    font-size: 72px;
+    font-weight: normal;
+    opacity: 0.8;
+    z-index: 2;
+    color: #333;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.timer-item span:first-child {
+    font-size: 72px;
+    line-height: 1;
+    font-weight: normal;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    margin-bottom: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+}
+
+.timer-item .label {
+    font-size: 14px;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    font-weight: normal;
+    margin-top: -5px;
+}
+
+.timer-title {
+    font-size: 20px;
+    opacity: 0.8;
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-transform: lowercase;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.music-btn.playing {
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.music-icon {
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .logo-container {
+        height: 40vh;
+        top: 10vh;
+    }
+
+    .logo-content {
+        width: 90%;
+        padding: 0 15px;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .timer-container {
+        padding: 0 15px;
+        box-sizing: border-box;
+        bottom: 35%;
+    }
+
+    .timer {
+        width: 100%;
+        padding: 8px;
+        gap: 3px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .timer-item {
+        padding: 3px 10px;
+        min-width: 60px;
+    }
+
+    .timer-item span:first-child {
+        font-size: 42px;
+    }
+
+    .timer-item .label {
+        font-size: 12px;
+    }
+
+    .timer-item:not(:last-child)::after {
+        right: -8px;
+        font-size: 42px;
+    }
+
+    .announcement-text {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    .music-btn {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media screen and (max-width: 380px) {
+    .timer-item {
+        min-width: 50px;
+        padding: 3px 8px;
+    }
+
+    .timer-item span:first-child {
+        font-size: 32px;
+    }
+
+    .timer-item .label {
+        font-size: 10px;
+    }
+
+    .timer-item:not(:last-child)::after {
+        font-size: 32px;
+        right: -6px;
+    }
+
+    .announcement-text {
+        font-size: 16px;
+    }
+}
