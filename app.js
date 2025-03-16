@@ -35,7 +35,6 @@ function playMusic() {
 
 // Автовоспроизведение при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-    // Из-за политики браузеров, нам нужно дождаться взаимодействия пользователя
     const startPlayback = () => {
         playMusic();
         document.removeEventListener('click', startPlayback);
