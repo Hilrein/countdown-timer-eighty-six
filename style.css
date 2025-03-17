@@ -241,7 +241,7 @@ body::before {
     }
 }
 
-/* Для очень маленьких экранов */
+/* Мобайл версия */
 @media screen and (max-width: 380px) {
     .timer-item {
         min-width: 50px;
