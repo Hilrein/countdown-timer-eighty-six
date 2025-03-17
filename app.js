@@ -1,4 +1,4 @@
-// Дата анонса 2 сезона (19 марта 2022)
+// Дата анонса 2 сезона аниме 86 (19 марта 2022)
 const announceDate = new Date('2022-03-19T00:00:00');
 
 function updateTimer() {
@@ -16,9 +16,9 @@ function updateTimer() {
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
-// Обновляем каждую секунду
+// Тут строчка кода оновляет каждую секунду
 setInterval(updateTimer, 1000);
-// Запускаем сразу при загрузке
+// Запускает таймер сразу при загрузке
 updateTimer();
 
 // Управление музыкой
@@ -33,7 +33,7 @@ function playMusic() {
     bgMusic.play();
 }
 
-// Автовоспроизведение при загрузке страницы
+// Автовоспроизведение музыки при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     const startPlayback = () => {
         playMusic();
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', startPlayback);
 });
 
-// Обработчик кнопки музыки
+// Кнопка музыки
 musicBtn.addEventListener('click', (e) => {
     e.stopPropagation(); // Предотвращаем срабатывание общего обработчика клика
     if (isPlaying) {
@@ -55,7 +55,7 @@ musicBtn.addEventListener('click', (e) => {
     isPlaying = !isPlaying;
 });
 
-// Синхронизация видео и аудио при воспроизведении
+// Синхронизация
 bgVideo.addEventListener('play', () => {
     if (isPlaying) {
         playMusic();
@@ -66,7 +66,7 @@ bgVideo.addEventListener('pause', () => {
     bgMusic.pause();
 });
 
-// Обработка окончания видео/аудио
+// Обработка окончания видео/музыка
 bgVideo.addEventListener('ended', () => {
     bgMusic.currentTime = 0;
 }); 
