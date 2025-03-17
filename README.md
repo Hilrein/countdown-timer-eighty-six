@@ -57,7 +57,7 @@ The site is optimized for modern browsers that support:
 
 - Font: Bebas Neue (Google Fonts)
 - Video & Audio: 86 EIGHTY-SIX Official Content
-- Design & Implementation: [Your Name/Team]
+- Design & Implementation: Sanzhar Turabaev
 
 ## License
 
