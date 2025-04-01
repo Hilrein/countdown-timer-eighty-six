@@ -25,7 +25,7 @@ const bgVideo = document.getElementById('bg-video');
 let isPlaying = true;
 
 function playMusic() {
-    bgMusic.currentTime = bgVideo.currentTime; // Синхронизируем время музыки с видео
+    bgMusic.currentTime = bgVideo.currentTime;
     bgMusic.play();
 }
 
