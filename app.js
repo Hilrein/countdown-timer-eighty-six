@@ -16,24 +16,20 @@ function updateTimer() {
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
-// Тут строчка кода оновляет каждую секунду
 setInterval(updateTimer, 1000);
-// Запускает таймер сразу при загрузке
 updateTimer();
 
-// Управление музыкой
 const musicBtn = document.getElementById('music-toggle');
 const bgMusic = document.getElementById('bg-music');
 const bgVideo = document.getElementById('bg-video');
-let isPlaying = true; // По умолчанию музыка играет
+let isPlaying = true;
 
-// Функция для воспроизведения музыки
 function playMusic() {
     bgMusic.currentTime = bgVideo.currentTime; // Синхронизируем время музыки с видео
     bgMusic.play();
 }
 
-// Автовоспроизведение музыки при загрузке страницы
+
 document.addEventListener('DOMContentLoaded', () => {
     const startPlayback = () => {
         playMusic();
@@ -42,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', startPlayback);
 });
 
-// Кнопка музыки
+
 musicBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Предотвращаем срабатывание общего обработчика клика
+    e.stopPropagation(); 
     if (isPlaying) {
         bgMusic.pause();
         musicBtn.classList.remove('playing');
@@ -55,7 +51,7 @@ musicBtn.addEventListener('click', (e) => {
     isPlaying = !isPlaying;
 });
 
-// Синхронизация
+
 bgVideo.addEventListener('play', () => {
     if (isPlaying) {
         playMusic();
@@ -66,7 +62,7 @@ bgVideo.addEventListener('pause', () => {
     bgMusic.pause();
 });
 
-// Обработка окончания видео/музыка
+
 bgVideo.addEventListener('ended', () => {
     bgMusic.currentTime = 0;
 }); 
